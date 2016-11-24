@@ -1,0 +1,332 @@
+/*电脑上显示样式*/
+
+
+/*导航栏*/
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	/*font-family: 'Microsoft YaHei';*/
+	font-family: "Apple LiGothic Medium";
+}
+
+a,
+a:hover {
+	text-decoration: none;
+}
+
+#navbar_container {
+	background-color: white;
+	width: 100%;
+	position: fixed;
+	height: 80px;
+	z-index: 100;
+	top: 0;
+}
+
+.headroom {
+	transition: all 0.4s cubic-bezier(0.72, -0.02, 0.57, 1);
+}
+
+.headroom--pinned {
+	transform: translateY(0%);
+	opacity: 1;
+}
+
+.headroom--unpinned {
+	transform: translateY(-190%);
+	opacity: 0;
+}
+
+#navbar_container>* {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#navbar_icon {
+	margin: 10px 70px auto 70px;
+}
+
+#navbar_icon>img {
+	width: 100px;
+	height: 120px;
+}
+
+.navbar_root_menu {
+	height: 80px;
+	margin: 0px;
+}
+
+.navbar_root_menu>li {
+	display: inline-block;
+	list-style: none;
+	position: relative;
+}
+
+.navbar_root_menu>li>a {
+	display: inline-block;
+	padding: 0px 12px;
+	height: 80px;
+	line-height: 80px;
+	position: relative;
+	font-size: 16px;
+}
+
+.navbar_root_menu>li:hover>a {
+	color: #dc0963;borderleft
+}
+
+
+/*.navbar_root_menu>li>a::before {
+	color: #cd0048;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 12px;
+	content: attr(data-hover);
+	max-height: 0;
+	transition: max-height 1s;
+	-webkit-transition: max-height 1s;
+	-ms-transition: max-height 1s;
+}
+
+.navbar_root_menu>li>a:hover::before {
+	max-height: 100%;
+}*/
+
+.navbar_root_menu a {
+	/*font-family: "Apple LiGothic Medium";*/
+	color: black;
+}
+
+.navbar_root_menu>li:hover .navbar_sub_menu {
+	display: block;
+}
+
+.navbar_sub_menu {
+	display: none;
+	list-style: none;
+	background-color: white;
+	position: absolute;
+	top: 80px;
+	left: 0px;
+	width: 150px;
+	animation: ani_dropDown 0.18s;
+}
+
+.navbar_sub_menu a {
+	font-size: 15px;
+	position: relative;
+	display: block;
+	padding: 10px 20px;
+	transition: all 0.3s;
+}
+
+.navbar_sub_menu li:hover a {
+	margin-left: 10px;
+	color: lightslategray;
+}
+
+.navbar_sub_menu>li>a:hover::before {
+	content: "";
+	width: 0;
+	height: 0;
+	border-width: 6px 0px 6px 6px;
+	border-color: transparent transparent transparent #cd0048;
+	border-style: solid;
+	top: 14px;
+	left: 10px;
+	position: absolute;
+	transition: all 0.3s;
+}
+
+#navbar_searchbox {
+	position: relative;
+	margin: 23px 10px;
+	height: 34px;
+	width: 181px;
+}
+
+#navbar_searchbox:hover {
+	background-color: #E7E7E7;
+	border-radius: 17px;
+}
+
+#navbar_search_input {
+	position: absolute;
+	padding-left: 15px;
+	width: 181px;
+	background-color: transparent;
+	border: none;
+	height: 34px;
+	line-height: 34px;
+	border-radius: 17px;
+}
+
+#navbar_search_input:focus {
+	outline: none;
+	background-color: #E7E7E7;
+}
+
+#navbar_search_button {
+	background-color: transparent;
+	border: none;
+	background-image: url(http://www.skp-beijing.com/wp-content/themes/skp/img/icons/icon_search.png);
+	width: 21px;
+	height: 21px;
+	top: 6px;
+	right: 7px;
+	position: absolute;
+}
+
+#navbar_search_button:hover {
+	background-position: bottom;
+}
+
+#navbar_bottom {
+	width: 100%;
+	display: block;
+	z-index: -1;
+	height: 76px;
+	position: absolute;
+	top: 80px;
+	background: url(http://www.skp-beijing.com/wp-content/themes/skp/img/menu/bg_menu_bottom.png) no-repeat -340px -2px;
+}
+
+
+/*#navbar_bottom>img {
+	height: 76px;
+	overflow-x: hidden;
+	position: absolute;
+	clip:rect(0px 1300px 76px 100px)
+}*/
+
+
+/*轮播视图*/
+
+#banner_container {
+	padding: 0;
+	margin-top: 80px;
+	background-color: white;
+}
+
+.slide_button {
+	display: block;
+	width: 30%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: transparent;
+	position: absolute;
+	bottom: 10%;
+	left: 35%;
+	color: white;
+	border: 1px solid white;
+}
+
+.slide_button:hover {
+	color: white;
+	background-color: black;
+	border: none;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+
+/*网页主要内容*/
+
+
+/*底部*/
+
+
+/*移动设备显示样式*/
+
+
+/*移动导航栏*/
+
+.mobile_button {
+	padding: 0;
+	position: relative;
+	float: right;
+	width: 80px;
+	height: 80px;
+	border: 0;
+	/*   border-radius: 50%; */
+	cursor: pointer;
+	text-indent: 100%;
+	background-color: transparent;
+	outline: none;
+}
+
+.mobile_button span,
+.mobile_button span::before,
+.mobile_button span::after {
+	position: absolute;
+	width: 40px;
+	height: 4px;
+	background: #dc0963;
+	border-radius: 2px;
+}
+
+.mobile_button span {
+	top: 38px;
+	left: 20px;
+	transition: all 0.3s;
+}
+
+.mobile_button span::before,
+.mobile_button span::after {
+	content: "";
+	left: 0;
+	transition: all 0.3s;
+}
+
+.mobile_button span::before {
+	bottom: 15px;
+}
+
+.mobile_button span::after {
+	top: 15px;
+}
+
+.mobile_menu_open span {
+	transform: rotate(0deg);
+	background-color: transparent;
+}
+
+.mobile_menu_open span::before {
+	transform: translateY(15px) rotate(45deg);
+}
+
+.mobile_menu_open span::after {
+	transform: translateY(-15px) rotate(-45deg);
+}
+
+
+/*keyframe*/
+
+@keyframes ani_dropDown {
+	0% {
+		transform: scaleY(0.1);
+		transform-origin: top;
+		-webkit-transform: scaleY(0.1);
+		-webkit-transform-origin: top;
+		-ms-transform: scaleY(0.1);
+		-ms-transform-origin: top;
+	}
+	100% {
+		transform: scaleY(1);
+		transform-origin: top;
+		-webkit-transform: scaleY(1);
+		-webkit-transform-origin: top;
+		-ms-transform: scaleY(1);
+		-ms-transform-origin: top;
+	}
+}
