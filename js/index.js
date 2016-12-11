@@ -1,41 +1,220 @@
 window.onload = function() {
-//初始化swiper
-swiperInit();
-//初始化headroom
-headroomInit();
+	//初始化swiper
+	swiperInit();
+	//初始化headroom
+	headroomInit();
+	//搜索框非空颜色改变
+	inputNotFocusChangeBGColor();
+	//固定“主编推荐”
+	fixedEditorRecommendation();
+}
+window.onresize = function() {
 
 }
 
-function headroomInit () {
-	var myHeader = document.getElementById("navbar_container");
-	var headroom = new Headroom(myHeader, {
-  "offset": document.querySelector("#banner_container").offsetHeight,
-});
+function headroomInit() {
+	var navbar = document.getElementById("navbar_container");
+	var headroom = new Headroom(navbar, {
+		//过了轮播幻灯片才开始隐藏导航
+		offset: document.getElementById("banner_container").offsetHeight,
+	});
 	headroom.init();
-//	alert(document.querySelector("#banner_container").offsetHeight);
+	//	headroom.destroy();
 }
-function swiperInit () {
-	var swiper = new Swiper('.swiper-container', {
-	    //同时显示view个数
-	    slidesPerView: 2,
-	    //居中显示
-	    centeredSlides: true,
-	    //点击跳转到对应slide
-	    slideToClickedSlide:true,
-	    //间距
-	    spaceBetween: 20,
-	    //循环
-	    loop: true,
-	    //补位，1表示补两个
-	    loopAdditionalSlides : 1
-  })
+
+function swiperInit() {
+	var swiper1 = new Swiper('#banner_container .swiper-container', {
+		//同时显示view个数
+		slidesPerView: 2,
+		//居中显示
+		centeredSlides: true,
+		//点击跳转到对应slide
+		slideToClickedSlide: true,
+		//间距
+		spaceBetween: 20,
+		//循环
+		loop: true,
+		//自动滚
+		//	    autoplay : 5000,
+		//用户操作完，还能自动滚
+		//		autoplayDisableOnInteraction : false,
+		//补位，1表示补两个
+		loopAdditionalSlides: 1,
+		//切换回调
+		onSlideChangeStart: function() {
+			removeVideoInSlide();
+		}
+	});
+	var swiper2 = new Swiper('.newest_choice .swiper-container', {
+		//同时显示view个数
+		slidesPerView: 3,
+		prevButton: '.swiper-button-prev',
+		nextButton: '.swiper-button-next',
+		//间距
+		spaceBetween: 27,
+		//循环
+		loop: true,
+		onInit: function(swiper) {
+			//Swiper初始化了
+			if(window.innerWidth < 768) {
+				//		console.log("qian1");
+				//		swiper1.params.slidesPerView=1.6;
+				//		swiper.params.slidesPerView=2;
+				//		console.log("hh");
+				//		alert(window.innerWidth);
+				//		alert(document.body.offsetWidth);
+				//	setTimeout(function(){
+				//		console.log("qian1");
+				//		swiper1.params.slidesPerView=1.6;
+				//		swiper2.params.slidesPerView=2;
+				//		console.log("hou1");
+				//	}, 1000);
+
+			}
+		}
+
+	});
+	//	swiper2.params.slidesPerView=2;
+	if(window.innerWidth < 768) {
+		//		console.log("qian1");
+		//		swiper1.params.slidesPerView=1.6;
+		//		swiper2.params.slidesPerView=2;
+		//		console.log("hh");
+		//		alert(window.innerWidth);
+		//		alert(document.body.offsetWidth);
+		//	setTimeout(function(){
+		//		console.log("qian1");
+		//		swiper1.params.slidesPerView=1.6;
+		//		swiper2.params.slidesPerView=2;
+		//		console.log("hou1");
+		//	}, 1000);
+
+	}
+	window.onresize = function() {
+		if(window.innerWidth < 768) {
+			swiper1.params.slidesPerView = 1.6;
+			swiper2.params.slidesPerView = 2;
+		} else {
+			swiper1.params.slidesPerView = 2;
+			swiper2.params.slidesPerView = 3;
+		}
+	}
 }
-function changeButtonIcon (icon) {
-    var iconClassName = icon.className;
-    if(iconClassName.indexOf(' mobile_menu_open') > -1){
-        //连空格一起替换
-        icon.className = icon.className.replace(' mobile_menu_open', '');
-    }else{
-        icon.className += ' mobile_menu_open';
-    }
+
+function inputNotFocusChangeBGColor() {
+	$("#navbar_search_input").blur(function() {
+		//清空两边空格
+		$str = $.trim($(this).val());
+		$(this).val($str);
+		if($str == "") {
+			$(this).attr("style", "");
+		} else {
+			$(this).css("background-color", "#E7E7E7");
+		}
+	});
+}
+
+function mobileNavBarDisplay() {
+	//  var iconClassName = icon.className;
+	//  if(iconClassName.indexOf(' mobile_menu_open') > -1){
+	//      //连空格一起替换
+	//      icon.className = icon.className.replace(' mobile_menu_open', '');
+	//  }else{
+	//      icon.className += ' mobile_menu_open';
+	//  }
+	//alert("2");
+	var $icon = $("#mobile_button");
+	$icon.toggleClass("mobile_button_open");
+	var $menu = $("#mobile_navbar");
+	$menu.toggleClass("mobile_navbar_open");
+}
+
+function addVideoInSlide(videoButton) {
+	//	var fatherEle = button.parentNode;
+	//	fatherEle.parentElement.style.overflow="hidden";
+	//	var video1 = document.createElement("video");
+	//	video1.style.position="absolute";
+	//	video1.style.top="0";
+	//	video1.style.width="auto";
+	//	video1.style.height="100%";
+	//	video1.setAttribute('id', 'slide_video');
+	//	video1.setAttribute('controls', '');
+	//	video1.setAttribute('autoplay', '');
+	//	var source1 = document.createElement("source");
+	//	source1.setAttribute('type', 'video/mp4');
+	//	source1.setAttribute('src', 'http://www.skp-beijing.com/wp-content/uploads/2015/11/15s.mp4');
+	//	video1.appendChild(source1);
+	//	fatherEle.appendChild(video1);
+	//	//偏移
+	//	video1.style.left="50%";
+	//	video1.style.transform="translateX(-50%)";
+
+	var $videoButtonEle = $(videoButton);
+	var $fatherEle = $videoButtonEle.parent();
+	$fatherEle.parents(".swiper-slide").css("overflow", "hidden");
+	var $videoEle = $("<video></video>");
+	$videoEle.css({
+		"position": "absolute",
+		"top": "0",
+		"left": "50%",
+		"transform": "translateX(-50%)",
+		"width": "auto",
+		"height": "100%",
+	});
+	$videoEle.attr({
+		"id": "slide_video",
+		"controls": "",
+		"autoplay": ""
+	});
+	$fatherEle.append($videoEle);
+	var $sourceEle = $("<source></source>");
+	$sourceEle.attr({
+		"type": "video/mp4",
+		"src": "http://www.skp-beijing.com/wp-content/uploads/2015/11/15s.mp4"
+	});
+	$videoEle.append($sourceEle);
+}
+
+function removeVideoInSlide() {
+	//	var ele=document.getElementById("slide_video");
+	//	if(ele){
+	//		var fatherEle=ele.parentNode;
+	//	fatherEle.removeChild(ele);
+	//	}
+
+	var $ele = $("#slide_video");
+	if($ele) {
+		$ele.remove();
+	}
+}
+function fixedEditorRecommendation() {
+
+	var startHeight = $(".editor_recommendation").offset().top + $(".editor_recommendation").height() - $(window).height();
+	var overHeight=$(".trend_discovery").offset().top - $(window).height();
+	$(window).scroll(function() {
+		
+	var currentHeight = $(window).scrollTop();
+//		console.info(currentHeight); 
+		console.info(startHeight);
+		var actionHeight = $(".editor_recommendation").offset().top + $(".editor_recommendation").height() - $(window).height();
+		if(currentHeight >= startHeight) {
+			//	alert("hao");
+			if (currentHeight<overHeight) {
+				$(".editor_recommendation").css({
+				'position': 'fixed',
+				'bottom': '0'
+			});
+			}else{
+				$(".editor_recommendation").parent().css('position','relative');
+				$(".editor_recommendation").css({
+					'position':'absolute',
+//					'left':'0'
+				});
+			}
+			
+		} else {
+			$(".editor_recommendation").attr("style", "");
+		}
+
+	});
 }

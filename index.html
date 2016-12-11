@@ -14,10 +14,10 @@
 		</style>
 	</head>
 
-	<body style="background-color: #1B6D85;">
+	<body>
 		<!--头部导航栏-->
 		<header id="navbar_container">
-			<a href="" id="navbar_icon">
+			<a href="" id="navbar_logo">
 				<img src="http://www.skp-beijing.com/wp-content/themes/skp/img/skp_logo_red.png?v=1" />
 			</a>
 			<ul class="navbar_root_menu visible-md-inline-block visible-lg-inline-block">
@@ -109,35 +109,35 @@
 				<input type="text" id="navbar_search_input" placeholder="">
 				<button type="submit" id="navbar_search_button"></button>
 			</form>
-			<button onclick="changeButtonIcon(this)" class="mobile_button visible-sm-block visible-xs-block">
-    <span>
-    </span>
-  </button>
+			<button onclick="mobileNavBarDisplay()" id="mobile_button" class="mobile_button visible-sm-block visible-xs-block">
+    			<span>
+   				</span>
+  			</button>
 			<div id="navbar_bottom"></div>
 		</header>
-
 		<!--轮播广告-->
 		<div id="banner_container" class="container-fluid">
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide" style="background-color:green">
+					<div class="swiper-slide">
 						<figure>
 							<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2016/11/1024_600-01_1024x600_acf_cropped-e1478858327283.jpg" />
+							<a class="slide_button" href="http://www.skp-beijing.com/wp-content/uploads/pdf/TO%E5%A4%A7%E5%BC%BA.pdf">活动详情</a>
 						</figure>
-						<a class="slide_button" href="http://www.skp-beijing.com/wp-content/uploads/pdf/TO%E5%A4%A7%E5%BC%BA.pdf">活动详情</a>
 					</div>
-					<div class="swiper-slide" style="background-color:red">
+					<div class="swiper-slide">
 						<figure>
 							<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2016/09/01_1024x600_acf_cropped.jpg" />
 						</figure>
 					</div>
-					<div class="swiper-slide" style="background-color:yellow">
+					<div class="swiper-slide">
 						<figure>
 							<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2016/10/1024_600-0110-21-08-41-16_1024x600_acf_cropped.jpg" />
+							<!--<figcaption class="slide_button" onclick="addVideoInSlide(this)">观看视频</figcaption>-->
+							<button class="slide_button" onclick="addVideoInSlide(this)">观看视频</button>
 						</figure>
-						<a class="slide_button" href="">观看视频</a>
 					</div>
-					<div class="swiper-slide" style="background-color:blue">
+					<div class="swiper-slide">
 						<figure>
 							<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2016/09/banner-1024_600_1024x600_acf_cropped.jpg" />
 						</figure>
@@ -145,28 +145,423 @@
 				</div>
 			</div>
 		</div>
+
 		<!--网页主要内容-->
-		<div id="main_container">
-			<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
-			<p id="123">hello</p>
-			<p id="123">hello</p>
-			<p id="123">hello</p>
-			<p id="123">hello</p>
-			<p id="123">hello</p>
-			<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+		<div id="main_container" class="container">
+			<div class="row four_block">
+				<div class="left_block col-md-3 col-lg-3">
+					<div class="editor_recommendation">
+						<header>
+							<figure class="title_img_block">
+								<img src="http://www.skp-beijing.com/wp-content/themes/skp/img/title/title_editorspick.png" />
+							</figure>
+						</header>
+						<div class="row">
+							<div class="col-xs-6 col-md-12">
+								<a href="#" class="">
+									<figure>
+										<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2016/04/203x104_acf_cropped-1.jpg" />
+										<figcaption title="“童心拥抱梦想”北京SKP&新京报第四届小小艺术家绘画比赛作品征集">“童心拥抱梦想”北京SKP&新京报第四届小小艺术家绘画比赛作品征集</figcaption>
+									</figure>
+								</a>
+							</div>
+							<div class="col-xs-6 col-md-12">
+								<a href="#" class="">
+									<figure>
+										<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2016/03/1000x430_1000x430_acf_cropped1_203x104_acf_cropped.jpg" />
+										<figcaption title="浪漫春日，Repetto L’atelier高级订制鞋履与您相约北京SKP">浪漫春日，Repetto L’atelier高级订制鞋履与您相约北京SKP</figcaption>
+									</figure>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="right_block col-md-9 col-lg-8 col-lg-offset-1">
+					<div class="newest_choice">
+						<header class="title_img_block">
+							<figure>
+								<img src="http://www.skp-beijing.com/wp-content/themes/skp/img/title/title_latest_eyeblock.png" />
+							</figure>
+						</header>
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img src="http://www.skp-beijing.com/wp-content/uploads/2016/04/183x224_acf_cropped.jpg" />
+											<figcaption title="“童心拥抱梦想”北京SKP&新京报第四届小小艺术家绘画比赛作品征集">“童心拥抱梦想”北京SKP&新京报第四届小小艺术家绘画比赛作品征集</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img src="http://www.skp-beijing.com/wp-content/uploads/2016/03/1000x430_183x224_acf_cropped.jpg" />
+											<figcaption title="浪漫春日，Repetto L’atelier高级订制鞋履与您相约北京SKP">浪漫春日，Repetto L’atelier高级订制鞋履与您相约北京SKP</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img src="http://www.skp-beijing.com/wp-content/uploads/2016/03/1000x4301_183x224_acf_cropped.jpg" />
+											<figcaption title="国际派OL的自我滋养">国际派OL的自我滋养</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img src="http://www.skp-beijing.com/wp-content/uploads/2016/03/11_1000x430_acf_cropped_1000x430_acf_cropped_318x255_acf_cropped_183x224_acf_cropped.jpg" />
+											<figcaption title="Chloé与高圆圆合作Drew手袋北京SKP限量预订">Chloé与高圆圆合作Drew手袋北京SKP限量预订</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2016/03/1_1000x430_acf_cropped3_183x224_acf_cropped.jpg" />
+											<figcaption title="BURBERRY北京SKP配饰店3月6日盛大开业">BURBERRY北京SKP配饰店3月6日盛大开业</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2016/03/1000x430_acf_cropped1_183x224_acf_cropped.jpg" />
+											<figcaption title="北京SKP | 米兰时装周  Gucci的领军力 & 街拍百图">北京SKP | 米兰时装周 Gucci的领军力 & 街拍百图</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2015/12/11_ETRO_183x224_acf_cropped-183x224.jpg" />
+											<figcaption title="TRIBAL CHIC SPRIT 优雅民族风精神蔓延">TRIBAL CHIC SPRIT 优雅民族风精神蔓延</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2015/12/SKP_03_B_183x224_acf_cropped-183x224.jpg" />
+											<figcaption title="THE BAG GAME 戏游手袋">THE BAG GAME 戏游手袋</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2015/12/06_183x224_acf_cropped1-183x224.jpg" />
+											<figcaption title="STONES & SCULPTURE 宝石与雕像">STONES & SCULPTURE 宝石与雕像</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2015/12/9_FURLA_183x224_acf_cropped-183x224.jpg" />
+											<figcaption title="FASHION WONDERLAND 漫游时装仙境">FASHION WONDERLAND 漫游时装仙境</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2015/12/1_PRADA_183x224_acf_cropped-183x224.jpg" />
+											<figcaption title="FAN OF THE FIFTIES 50年代风范再现">FAN OF THE FIFTIES 50年代风范再现</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2015/12/9_POMELLATO_183x224_acf_cropped1-183x224.jpg" />
+											<figcaption title="DARK ELEGANCE 黑色优雅">DARK ELEGANCE<br/>黑色优雅</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2015/07/PIAGET1_183x224_acf_cropped-183x224.jpg" />
+											<figcaption title="卡普里风情 CAPRI SPIRIT">卡普里风情<br/>CAPRI SPIRIT</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img src="http://www.skp-beijing.com/wp-content/uploads/2015/07/11_183x224_acf_cropped1-183x224.jpg" />
+											<figcaption title="SCENTS OF ITALY 意国之香">SCENTS OF ITALY<br/>意国之香</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img src="http://www.skp-beijing.com/wp-content/uploads/2015/07/CARVEN_183x224_acf_cropped2-183x224.jpg" />
+											<figcaption title="STRIPES 仲夏条纹">STRIPES<br/>仲夏条纹</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img src="http://www.skp-beijing.com/wp-content/uploads/2015/07/Mr.-Mario-Prada_grandfather-of-Miuccia-Prada-Photo-Credit-Courtesy-of-Prada1_183x224_acf_cropped-183x224.jpg" />
+											<figcaption title="皮具起家的时装传奇">皮具起家的时装传奇</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img src="http://www.skp-beijing.com/wp-content/uploads/2015/07/Gucci-2015-Fashion-Show-Womens-Handbag_Jackie-Soft_265001-2_183x224_acf_cropped-183x224.jpg" />
+											<figcaption title="SHADES OF RED 红色情迷">SHADES OF RED<br />红色情迷</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img src="http://www.skp-beijing.com/wp-content/uploads/2015/04/未标题-11-183x224.jpg" />
+											<figcaption title="FRINGES 流苏">FRINGES<br />流苏</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img src="http://www.skp-beijing.com/wp-content/uploads/2015/04/未标题-23-183x224.jpg" />
+											<figcaption title="BLACK & WHITE 黑与白">BLACK & WHITE<br/>黑与白</figcaption>
+										</a>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<a href="">
+											<img src="http://www.skp-beijing.com/wp-content/uploads/2015/04/1_183x224_acf_cropped-183x224.jpg" />
+											<figcaption title="IN THE  GARDEN 秘密花园">IN THE GARDEN<br />秘密花园</figcaption>
+										</a>
+									</figure>
+								</div>
+							</div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+						</div>
+					</div>
+					<div class="hot_ranking">
+						<header class="title_img_block">
+							<figure>
+								<img src="http://www.skp-beijing.com/wp-content/themes/skp/img/title/title_mostviewed.png" />
+							</figure>
+						</header>
+						<div class="row">
+							<div class="col-xs-12 col-md-5">
+								<a href="">
+									<figure>
+										<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2016/11/1024_600-01_1024x600_acf_cropped-e1478858327283_318x255_acf_cropped-1_289x195_acf_cropped.jpg" />
+									</figure>
+								</a>
+							</div>
+							<div class="col-xs-12 col-md-7">
+								<p class="subtitle">精彩活动</p>
+								<a href="" class="hot_ranking_text">十年蜕变，优雅绽放 ——北京SKP十周年店庆特别礼遇</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-md-5">
+								<a href="">
+									<figure>
+										<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2016/08/1-1_1024x600_acf_cropped_289x195_acf_cropped.jpg" />
+									</figure>
+								</a>
+							</div>
+							<div class="col-xs-12 col-md-7">
+								<p class="subtitle">精彩活动</p>
+								<a href="" class="hot_ranking_text">全球男士时尚生活目的地——北京SKP二层全新亮相</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-md-5">
+								<a href="">
+									<figure>
+										<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2016/04/1_310x249_acf_cropped-1_289x195_acf_cropped.jpg" />
+									</figure>
+								</a>
+							</div>
+							<div class="col-xs-12 col-md-7">
+								<p class="subtitle">精彩活动</p>
+								<a href="" class="hot_ranking_text">九周年生日庆完美开幕 北京SKP再创单日2.6亿元销售新高</a>
+							</div>
+						</div>
+					</div>
+					<div class="recent_update">
+						<header class="title_img_block">
+							<figure>
+								<img src="http://www.skp-beijing.com/wp-content/themes/skp/img/title/title_latest_article.png?v=1" />
+							</figure>
+						</header>
+						<div class="recent_update_box_left">
+							<a href="">
+								<figure>
+									<img class="recent_update_box_img" src="http://www.skp-beijing.com/wp-content/uploads/2016/11/1024_600-01_1024x600_acf_cropped-e1478858327283_318x255_acf_cropped-1.jpg" />
+								</figure>
+							</a>
+							<p class="subtitle">精彩活动</p>
+							<a href="" class="recent_update_text" title="十年蜕变，优雅绽放 ——北京SKP十周年店庆特别礼遇">
+								十年蜕变，优雅绽放 ——北京SKP十周年店庆特别礼遇
+							</a>
+						</div>
+						<div class="recent_update_box_right">
+							<a href="">
+								<figure>
+									<img class="recent_update_box_img" src="http://www.skp-beijing.com/wp-content/uploads/2016/08/1封面-1_318x255_acf_cropped.jpg" />
+								</figure>
+							</a>
+							<p class="subtitle">商场</p>
+							<a href="" class="recent_update_text" title="HERA赫妍北京SKP璀璨启幕 品牌缪斯全智贤华丽亮相">
+								HERA赫妍北京SKP璀璨启幕 品牌缪斯全智贤华丽亮相
+							</a>
+						</div>
+						<div class="recent_update_box_left">
+							<a href="">
+								<figure>
+									<img class="recent_update_box_img" src="http://www.skp-beijing.com/wp-content/uploads/2016/04/1_318x255_acf_cropped.jpg" />
+								</figure>
+							</a>
+							<p class="subtitle">时装</p>
+							<a href="" class="recent_update_text" title="劳力士2016巴塞尔世界新款腕表">
+								劳力士2016巴塞尔世界新款腕表
+							</a>
+						</div>
+						<div class="recent_update_box_right">
+							<a href="">
+								<figure>
+									<img class="recent_update_box_img" src="http://www.skp-beijing.com/wp-content/uploads/2016/03/1000x430_acf_cropped3_318x255_acf_cropped.jpg" />
+								</figure>
+							</a>
+							<p class="subtitle">时装</p>
+							<a href="" class="recent_update_text" title="纪梵希推出全新2016春夏系列眼镜&BOW CUT手袋系列">
+								纪梵希推出全新2016春夏系列眼镜&BOW CUT手袋系列
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="trend_discovery">
+				<header>
+					<figure class="title_img_block">
+						<img src="http://www.skp-beijing.com/wp-content/themes/skp/img/title/title_front_row.png" />
+					</figure>
+				</header>
+				<div class="trend_discovery_box">
+					<figure>
+					<a href="">
+						<img class="trend_discovery_img img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2014/12/35_WEB.jpg_204x456_acf_cropped-204x456.jpg" />
+					</a>
+					<a href="">
+						<img class="trend_discovery_img img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2015/06/Milano-str-F15-251_204x456_acf_cropped-204x456.jpg" />
+					</a>
+					<a href="">
+						<img class="trend_discovery_img img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2014/12/LV25jpg_WEB_204x456_acf_cropped-204x456.jpg" />
+					</a>
+					<a href="">
+						<img class="trend_discovery_img img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2014/12/Shot_06_WEB1_204x456_acf_cropped-204x456.jpg" />
+					</a>
+					<a href="">
+						<img class="trend_discovery_img img-responsive" src="http://www.skp-beijing.com/wp-content/uploads/2014/12/44_204x456_acf_cropped-204x456.jpg" />
+					</a>
+					</figure>
+				</div>
+			</div>
 		</div>
 		<!--底部-->
-		<footer id="foot_container"></footer>
-		<!--移动导航栏-->
-		<div id="mobile_navbar" class="visible-sm-block visible-xs-block">
+		<footer id="foot_container">
+			<div class="follow_us visible-md-inline-block visible-lg-inline-block">
+				<div class="weibo_and_weixin">
+				<a href="">
+					<figure title="SKP Weibo">
+						<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/themes/skp/img/icons/icon_weibo.svg" />
+						<figcaption>SKP官方微博</figcaption>
+					</figure>
+				</a>
+				<a href="">
+					<figure title="SKP Wechat">
+						<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/themes/skp/img/icons/icon_wechat.svg" />
+						<figcaption>SKP官方微信</figcaption>
+					</figure>
+				</a>
+			</div>
+			<p>关注我们</p>
+			</div>
+			<div class="contact_us">
+				<address class="contact_us_text">
+					<h3>服务信息</h3>
+					<ul>
+						<li>星期一至星期日: 10:00 - 22:00</li>
+						<li>电话：<a href="tel:010-65305888">（010）65305888</a></li>
+						<li>地址：北京市朝阳区建国路87号</li>
+						<li>总经理邮箱：<a href="mailto:CEO@skp-beijing.com">CEO@skp-beijing.com</a></li>
+					</ul>
+				</address>
+				<div class="contact_us_picture">
+					<figure>
+						<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/themes/skp/img/skp_location.jpg" />
+					</figure>
+				</div>
+			</div>
+			<div class="footer_logo visible-md-inline-block visible-lg-inline-block">
+				<a href="">
+					<figure>
+						<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/themes/skp/img/skp_logo_red.png" />
+					</figure>
+				</a>
+			</div>
+		</footer>
+		<!--底部/移动导航栏-->
+		<div id="mobile_navbar" class="mobile_navbar">
 			<ul>
-				<li><a href="#">SKP主编精选</a></li>
-				<li><a href="#">时装</a></li>
-				<li><a href="#">美容</a></li>
-				<li><a href="#">生活</a></li>
-				<li><a href="#">SKP商场</a></li>
-				<li><a href="#">SKP杂志</a></li>
+				<li>
+					<a href="#">SKP主编精选</a>
+				</li>
+				<li>
+					<a href="#">时装</a>
+				</li>
+				<li>
+					<a href="#">美容</a>
+				</li>
+				<li>
+					<a href="#">生活</a>
+				</li>
+				<li>
+					<a href="#">SKP商场</a>
+				</li>
+				<li>
+					<a href="#">SKP杂志</a>
+				</li>
+				<li class="visible-md-inline-block visible-lg-inline-block">
+					<a href="">法律声明</a>
+				</li>
 			</ul>
+			<div class="weibo_and_weixin visible-sm-block visible-xs-block">
+				<a href="">
+					<figure>
+						<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/themes/skp/img/icons/icon_weibo.svg" />
+						<figcaption title="SKP官方微博">SKP官方微博</figcaption>
+					</figure>
+				</a>
+				<a href="">
+					<figure>
+						<img class="img-responsive" src="http://www.skp-beijing.com/wp-content/themes/skp/img/icons/icon_wechat.svg" />
+						<figcaption title="SKP官方微信">SKP官方微信</figcaption>
+					</figure>
+				</a>
+			</div>
+		</div>
+		<div class="footer_bottom">
+			<p>京ICP备14056986号-2</p>
+			<p>版权归属 北京华联(SKP)百货有限公司</p>
 		</div>
 		<script src="plugin/jQuery(3.1.1)/jquery.min.js"></script>
 		<script src="plugin/Bootstrap(3.3.7)/bootstrap.min.js"></script>
