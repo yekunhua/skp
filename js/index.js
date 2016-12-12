@@ -8,9 +8,6 @@ window.onload = function() {
 	//固定“主编推荐”
 	fixedEditorRecommendation();
 }
-window.onresize = function() {
-
-}
 
 function headroomInit() {
 	var navbar = document.getElementById("navbar_container");
@@ -54,41 +51,23 @@ function swiperInit() {
 		spaceBetween: 27,
 		//循环
 		loop: true,
-		onInit: function(swiper) {
-			//Swiper初始化了
-			if(window.innerWidth < 768) {
-				//		console.log("qian1");
-				//		swiper1.params.slidesPerView=1.6;
-				//		swiper.params.slidesPerView=2;
-				//		console.log("hh");
-				//		alert(window.innerWidth);
-				//		alert(document.body.offsetWidth);
-				//	setTimeout(function(){
-				//		console.log("qian1");
-				//		swiper1.params.slidesPerView=1.6;
-				//		swiper2.params.slidesPerView=2;
-				//		console.log("hou1");
-				//	}, 1000);
-
-			}
-		}
 
 	});
 	//	swiper2.params.slidesPerView=2;
+//	if(window.innerWidth < 768) {
+//		swiper1.params.slidesPerView = 1.6;
+//		swiper2.params.slidesPerView = 2;
+//			setTimeout(function(){
+//				swiper1.params.slidesPerView=1.6;
+//				swiper2.params.slidesPerView=2;
+//			}, 1000);
+//	}
 	if(window.innerWidth < 768) {
-		//		console.log("qian1");
-		//		swiper1.params.slidesPerView=1.6;
-		//		swiper2.params.slidesPerView=2;
-		//		console.log("hh");
-		//		alert(window.innerWidth);
-		//		alert(document.body.offsetWidth);
-		//	setTimeout(function(){
-		//		console.log("qian1");
-		//		swiper1.params.slidesPerView=1.6;
-		//		swiper2.params.slidesPerView=2;
-		//		console.log("hou1");
-		//	}, 1000);
-
+			swiper1.params.slidesPerView = 1.6;
+			swiper2.params.slidesPerView = 2;
+	} else {
+			swiper1.params.slidesPerView = 2;
+			swiper2.params.slidesPerView = 3;
 	}
 	window.onresize = function() {
 		if(window.innerWidth < 768) {
@@ -187,34 +166,44 @@ function removeVideoInSlide() {
 		$ele.remove();
 	}
 }
+
 function fixedEditorRecommendation() {
 
-	var startHeight = $(".editor_recommendation").offset().top + $(".editor_recommendation").height() - $(window).height();
-	var overHeight=$(".trend_discovery").offset().top - $(window).height();
+	var startHeight = $(".editor_recommendation").offset().top - 150;
+	var overHeight = $(".trend_discovery").offset().top - $(window).height();
+
+	//刷新情况
+	fixedEditorRecommendationAction(startHeight, overHeight);
+
+	//改变宽度情况
+	$(window).resize(function() {
+		var startHeight = $(".editor_recommendation").offset().top - 150;
+		var overHeight = $(".trend_discovery").offset().top - $(window).height();
+		fixedEditorRecommendationAction(startHeight, overHeight);
+	});
+
+	//滚动情况
 	$(window).scroll(function() {
-		
-	var currentHeight = $(window).scrollTop();
-//		console.info(currentHeight); 
-		console.info(startHeight);
-		var actionHeight = $(".editor_recommendation").offset().top + $(".editor_recommendation").height() - $(window).height();
-		if(currentHeight >= startHeight) {
-			//	alert("hao");
-			if (currentHeight<overHeight) {
-				$(".editor_recommendation").css({
-				'position': 'fixed',
-				'bottom': '0'
-			});
-			}else{
-				$(".editor_recommendation").parent().css('position','relative');
-				$(".editor_recommendation").css({
-					'position':'absolute',
-//					'left':'0'
-				});
-			}
-			
-		} else {
-			$(".editor_recommendation").attr("style", "");
-		}
+		fixedEditorRecommendationAction(startHeight, overHeight);
 
 	});
+}
+
+function fixedEditorRecommendationAction(startHeight, overHeight) {
+	var currentHeight = $(window).scrollTop();
+
+	if(currentHeight >= startHeight) {
+		if(currentHeight < overHeight) {
+			$(".editor_recommendation").removeClass("editor_recommendation_absolute");
+			$(".editor_recommendation").addClass("editor_recommendation_fixed");
+		} else {
+			$(".editor_recommendation").removeClass("editor_recommendation_fixed");
+			$(".editor_recommendation").addClass("editor_recommendation_absolute");
+		}
+
+	} else {
+		$(".editor_recommendation").removeClass("editor_recommendation_fixed");
+		$(".editor_recommendation").removeClass("editor_recommendation_absolute");
+
+	}
 }

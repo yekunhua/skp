@@ -244,15 +244,16 @@ figure {
 }
 
 #banner_container .swiper-slide-prev img,
-#banner_container .swiper-slide-next img{
+#banner_container .swiper-slide-next img {
 	opacity: 0.5;
 	cursor: pointer;
 }
 
 #banner_container .swiper-slide-prev figure,
-#banner_container .swiper-slide-next figure{
+#banner_container .swiper-slide-next figure {
 	background-color: black;
 }
+
 
 /*网页主要内容*/
 
@@ -268,8 +269,11 @@ figure {
 	margin-top: 50px;
 }
 
-.four_block>div {
-	/*transition: all 0.5s;*/
+@media only screen and (min-width: 1200px) {
+	.four_block {
+		width: 970px;
+		margin: 0 auto;
+	}
 }
 
 .title_img_block {
@@ -277,9 +281,7 @@ figure {
 	margin-bottom: 20px;
 	/*margin: 0 auto auto 20px;*/
 }
-.left_block{
-	height: 100%;
-}
+
 .right_block>div {
 	margin-bottom: 50px;
 }
@@ -293,18 +295,28 @@ figure {
 	}
 }
 
+.editor_recommendation {
+	margin-bottom: 50px;
+}
+
 @media only screen and (min-width: 992px) {
 	.editor_recommendation {
 		max-width: 190px;
 	}
-}
-
-.editor_recommendation {
-	/*margin-bottom: 50px;*/
-}
-
-.editor_recommendation div.row>div {
-	/*margin-bottom: 30px;*/
+	.left_block {
+		height: 2015px;
+		display: inline-block;
+		position: relative;
+	}
+	.editor_recommendation_fixed {
+		position: fixed;
+		top: 150px;
+	}
+	.editor_recommendation_absolute {
+		position: absolute;
+		bottom: 0px;
+		left: 15px;
+	}
 }
 
 .editor_recommendation figure img {
@@ -735,18 +747,23 @@ figure {
 .mobile_navbar li>a:hover {
 	color: #dc0963;
 }
-.footer_bottom{
+
+.footer_bottom {
 	text-align: center;
 	padding: 40px 0;
 }
-.footer_bottom>p{
+
+.footer_bottom>p {
 	margin: 0 15px;
 	display: inline-block;
 	color: #a6a6a6;
 	font-family: "microsoft yahei";
 	font-size: 15px;
 }
+
+
 /*移动导航*/
+
 @media only screen and (max-width: 991px) {
 	#navbar_logo {
 		margin-left: 15px;
