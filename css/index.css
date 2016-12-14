@@ -7,7 +7,6 @@
 
 body {
 	font-family: 'Microsoft YaHei';
-	/*font-family: "Apple LiGothic Medium";*/
 }
 
 a,
@@ -206,20 +205,11 @@ figure {
 }
 
 
-/*#navbar_bottom>img {
-	height: 76px;
-	overflow-x: hidden;
-	position: absolute;
-	clip:rect(0px 1300px 76px 100px)
-}*/
-
-
 /*轮播视图*/
 
 #banner_container {
 	padding: 0;
 	margin-top: 80px;
-	/*background-color: white;*/
 }
 
 .slide_button {
@@ -257,21 +247,13 @@ figure {
 
 /*网页主要内容*/
 
-@media only screen and (min-width:768px) {
-	/*.right_block>*{
-	max-width: 690px;
-	height: auto;
-	float: right;
-	}*/
-}
-
 #main_container {
 	margin-top: 50px;
 }
 
 @media only screen and (min-width: 1200px) {
 	.four_block {
-		width: 970px;
+		width: 1000px;
 		margin: 0 auto;
 	}
 }
@@ -279,7 +261,6 @@ figure {
 .title_img_block {
 	border-bottom: 6px solid black;
 	margin-bottom: 20px;
-	/*margin: 0 auto auto 20px;*/
 }
 
 .right_block>div {
@@ -324,7 +305,6 @@ figure {
 }
 
 .editor_recommendation figcaption {
-	font-family: "microsoft yahei";
 	font-size: 15px;
 	color: black;
 }
@@ -346,8 +326,6 @@ figure {
 		border-bottom: 1px solid #eee;
 	}
 }
-
-.newest_choice {}
 
 .newest_choice .swiper-container {
 	padding: 0px 27px;
@@ -382,7 +360,6 @@ figure {
 
 .newest_choice .swiper-container .swiper-button-prev,
 .newest_choice .swiper-container .swiper-button-next {
-	/*width: 30px;*/
 	height: 100%;
 	position: absolute;
 	top: 0px;
@@ -421,7 +398,6 @@ figure {
 .hot_ranking_text,
 .recent_update_text {
 	font-size: 18px;
-	font-family: "microsoft yahei";
 }
 
 @media only screen and (max-width: 991px) {
@@ -498,10 +474,6 @@ figure {
 	width: 100%;
 }
 
-.recent_update div.col-xs-6 figure img {
-	/*margin: 0px auto;*/
-}
-
 .recent_update_box_img {
 	width: 100%;
 	height: auto;
@@ -516,7 +488,6 @@ figure {
 }
 
 .trend_discovery_box a {
-	/*display: inline-block;*/
 	float: left;
 	width: 20%;
 }
@@ -548,20 +519,11 @@ figure {
 	background-color: #f0f0f0;
 }
 
-.follow_us .weibo_and_weixin {
-	/*width: 300px;*/
-	/*margin: 0px auto;*/
-	/*text-align: center;*/
-}
-
 .weibo_and_weixin {
-	/*overflow: hidden;*/
 	text-align: center;
 }
 
 .weibo_and_weixin>a {
-	/*width: 50%;*/
-	/*float: left;*/
 	display: inline-block;
 	margin: 0 30px;
 }
@@ -574,7 +536,6 @@ figure {
 }
 
 .weibo_and_weixin figure figcaption {
-	font-family: "microsoft yahei";
 	color: black;
 	font-size: 15px;
 	transition: all 0.4s;
@@ -586,7 +547,6 @@ figure {
 
 .follow_us p {
 	width: 160px;
-	font-family: "microsoft yahei";
 	font-size: 17px;
 	border-top: 1px solid black;
 	border-bottom: 6px solid black;
@@ -597,18 +557,19 @@ figure {
 
 .contact_us {
 	margin: 50px;
+	/*text-align: center;*/
 	overflow: hidden;
 }
 
-.contact_us_text,
-.contact_us_picture {
-	/*top: 0;*/
+@media only screen and (min-width: 1200px) {
+	.contact_us {
+		margin: 50px 150px;
+	}
 }
 
 .contact_us_text {
 	text-align: center;
 	vertical-align: middle;
-	font-family: "microsoft yahei";
 	position: relative;
 	float: left;
 	height: 260px;
@@ -695,7 +656,6 @@ figure {
 	.contact_us_text,
 	.contact_us_picture {
 		float: none;
-		/*clear: both;*/
 		display: block;
 		overflow: hidden;
 	}
@@ -725,7 +685,6 @@ figure {
 
 .mobile_navbar {
 	text-align: center;
-	/*margin-bottom: 50px;*/
 }
 
 .mobile_navbar ul {
@@ -738,10 +697,8 @@ figure {
 }
 
 .mobile_navbar li {
-	font-family: "microsoft yahei";
 	font-size: 15px;
 	padding: 10px 20px;
-	/*text-align: center;*/
 }
 
 .mobile_navbar li>a:hover {
@@ -757,7 +714,6 @@ figure {
 	margin: 0 15px;
 	display: inline-block;
 	color: #a6a6a6;
-	font-family: "microsoft yahei";
 	font-size: 15px;
 }
 
@@ -782,11 +738,8 @@ figure {
 		width: 80px;
 		height: 80px;
 		border: 0;
-		/*   border-radius: 50%; */
 		cursor: pointer;
-		/*text-indent: 100%;*/
 		background-color: transparent;
-		/*outline: none;*/
 	}
 	.mobile_button span,
 	.mobile_button span::before,
@@ -852,7 +805,6 @@ figure {
 		padding: 0;
 	}
 	.mobile_navbar ul li a {
-		/*color: black;*/
 		width: 100%;
 		font-weight: bold;
 		padding: 10px 20px;
